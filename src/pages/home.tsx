@@ -15,7 +15,7 @@ export default function Home() {
         {/* Subtle Background Image for Depth */}
         <div className="absolute inset-0 pointer-events-none select-none">
           <img 
-            src="/src/assets/image1.jpg" 
+            src="/image1.jpg" 
             alt="Sports Day header background" 
             className="w-full h-full object-cover opacity-10" 
           />
@@ -44,7 +44,7 @@ export default function Home() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <img 
-            src="/src/assets/image1.jpg" 
+            src="/image1.jpg" 
             alt="Sports Day promotional poster" 
             className="w-full h-full object-cover opacity-70" 
           />
@@ -91,7 +91,7 @@ export default function Home() {
           </div>
           <div className="flex flex-col items-center justify-center">
             <img
-              src="/src/assets/sports.jpeg"
+              src="/sports.jpeg"
               alt="Sports and activities collage"
               className="w-full max-w-3xl rounded-xl shadow-lg border border-teal-200 object-cover"
             />
@@ -107,7 +107,7 @@ export default function Home() {
         {/* Sports Pattern Background */}
         <div className="absolute inset-0">
           <img 
-            src="/src/assets/image 3.jpg" 
+            src="/image 3.jpg" 
             alt="Sports pattern background" 
             className="w-full h-full object-cover opacity-50" 
           />
@@ -171,7 +171,7 @@ export default function Home() {
             {/* DOF Branding */}
             <div className="relative">
               <img 
-                src="/src/assets/image 4.jpg" 
+                src="/image 4.jpg" 
                 alt="DOF Sports & Family Day branding" 
                 className="w-full rounded-xl shadow-lg" 
               />
@@ -227,7 +227,7 @@ export default function Home() {
           
           <div className="relative">
             <img 
-              src="/src/assets/image 5.jpg" 
+              src="/image 5.jpg" 
               alt="DOF Sports Day promotional materials - feather flag and tote bag" 
               className="w-full rounded-xl shadow-2xl" 
             />
@@ -260,7 +260,7 @@ export default function Home() {
       <section className="relative py-16 bg-gradient-to-br from-green-600 to-green-800 overflow-hidden">
         <div className="absolute inset-0">
           <img 
-            src="/src/assets/image 6.jpg" 
+            src="/image 6.jpg" 
             alt="Sports field with DOI branding" 
             className="w-full h-full object-cover opacity-30" 
           />
@@ -338,7 +338,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-2xl font-bold text-teal-900 mb-6 tracking-tight">Organized By & Official Partners</h2>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-12">
-            <img src="/src/assets/logo-black.jpg" alt="Event Partners and Organizers" className="max-h-24 w-auto object-contain" />
+            <img src="/logo-black.jpg" alt="Event Partners and Organizers" className="max-h-24 w-auto object-contain" />
           </div>
         </div>
       </section>

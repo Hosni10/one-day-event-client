@@ -345,7 +345,7 @@ export default function RegistrationForm() {
                             
                             <div className="relative">
                               <img 
-                                src="/src/assets/size-chart.jpeg" 
+                                src="/size-chart.jpeg" 
                                 alt="Professional t-shirt size chart for Gents, Ladies, and Kids" 
                                 className="w-full h-auto rounded-lg shadow-lg border border-gray-200"
                               />
@@ -586,7 +586,7 @@ export default function RegistrationForm() {
                                         
                                         <div className="relative">
                                           <img 
-                                            src="/src/assets/size-chart.jpeg" 
+                                            src="/size-chart.jpeg" 
                                             alt="Professional t-shirt size chart for Gents, Ladies, and Kids" 
                                             className="w-full h-auto rounded-lg shadow-lg border border-gray-200"
                                           />

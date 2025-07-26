@@ -218,7 +218,7 @@ export default function Home() {
       </section>
 
       {/* Promotional Materials Showcase */}
-      <section className="py-16 bg-gradient-to-br from-teal-50 to-teal-100">
+      {/* <section className="py-16 bg-gradient-to-br from-teal-50 to-teal-100">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-teal-900 mb-4">Event Promotional Materials</h2>
@@ -254,7 +254,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Sports Field Section */}
       <section className="relative py-16 bg-gradient-to-br from-green-600 to-green-800 overflow-hidden">

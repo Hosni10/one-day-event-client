@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(180, 100%, 25%); /* Teal background */
+  --foreground: hsl(0, 0%, 100%); /* White text */
+  --muted: hsl(180, 100%, 20%); /* Darker teal for muted areas */
+  --muted-foreground: hsl(0, 0%, 80%); /* Light gray text */
+  --popover: hsl(180, 100%, 30%); /* Slightly lighter teal for popovers */
+  --popover-foreground: hsl(0, 0%, 100%); /* White text */
+  --card: hsl(180, 100%, 30%); /* Card background */
+  --card-foreground: hsl(0, 0%, 100%); /* White text */
+  --border: hsl(180, 100%, 35%); /* Border color */
+  --input: hsl(180, 100%, 35%); /* Input background */
+  --primary: hsl(25, 100%, 50%); /* Burnt orange primary */
+  --primary-foreground: hsl(0, 0%, 100%); /* White text on primary */
+  --secondary: hsl(0, 0%, 0%); /* Black secondary */
+  --secondary-foreground: hsl(0, 0%, 100%); /* White text on secondary */
+  --accent: hsl(0, 0%, 100%); /* White accent */
+  --accent-foreground: hsl(180, 100%, 25%); /* Teal text on accent */
+  --success: hsl(142, 76%, 36%);
+  --success-foreground: hsl(0, 0%, 100%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --ring: hsl(25, 100%, 50%); /* Burnt orange ring */
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: hsl(180, 100%, 15%); /* Darker teal for dark mode */
+  --foreground: hsl(0, 0%, 100%); /* White text */
+  --muted: hsl(180, 100%, 10%); /* Very dark teal for muted areas */
+  --muted-foreground: hsl(0, 0%, 70%); /* Medium gray text */
+  --popover: hsl(180, 100%, 20%); /* Dark teal for popovers */
+  --popover-foreground: hsl(0, 0%, 100%); /* White text */
+  --card: hsl(180, 100%, 20%); /* Card background */
+  --card-foreground: hsl(0, 0%, 100%); /* White text */
+  --border: hsl(180, 100%, 25%); /* Border color */
+  --input: hsl(180, 100%, 25%); /* Input background */
+  --primary: hsl(25, 100%, 50%); /* Burnt orange primary */
+  --primary-foreground: hsl(0, 0%, 100%); /* White text on primary */
+  --secondary: hsl(0, 0%, 0%); /* Black secondary */
+  --secondary-foreground: hsl(0, 0%, 100%); /* White text on secondary */
+  --accent: hsl(0, 0%, 100%); /* White accent */
+  --accent-foreground: hsl(180, 100%, 15%); /* Dark teal text on accent */
+  --success: hsl(142, 76%, 36%);
+  --success-foreground: hsl(0, 0%, 100%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --ring: hsl(25, 100%, 50%); /* Burnt orange ring */
+  --radius: 0.5rem;
+}
+
+.text-destructive {
+  color: #dc2626 !important; /* Tailwind's red-600 */
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}

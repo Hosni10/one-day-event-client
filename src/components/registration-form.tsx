@@ -32,7 +32,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { User, Baby, Trophy, Heart, Loader2, CheckCircle, Clock, Users, Ruler } from "lucide-react";
+import { User, Baby, Trophy, Heart, Loader2, CheckCircle, Ruler } from "lucide-react";
 
 const tshirtSizes = ["XS", "S", "M", "L", "XL", "XXL"] as const;
 const entertainmentSports = [

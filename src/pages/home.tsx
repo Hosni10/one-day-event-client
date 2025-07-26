@@ -1,4 +1,4 @@
-import { CalendarDays, Users, Clock, Trophy, Shirt, Heart, MapPin, Star } from "lucide-react";
+import { CalendarDays, Users, Clock, Trophy, Shirt, MapPin, Star } from "lucide-react";
 import RegistrationForm from "@/components/registration-form";
 
 export default function Home() {

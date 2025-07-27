@@ -21,7 +21,7 @@ export const insertRegistrationSchema = z.object({
   interestedInCompeting: z.boolean(),
   competitiveSports: z.array(z.string()).optional(),
   lastExercise: z.string().min(1, "Please answer when you last exercised."),
-  medicalConditions: z.array(z.string()).min(1, "Please select at least one medical condition."),
+  medicalConditions: z.array(z.string()).optional(),
   currentMedications: z.string().optional(),
   previousInjuries: z.string().optional(),
   physicalLimitations: z.string().optional(),
@@ -36,7 +36,11 @@ export const insertRegistrationSchema = z.object({
   isTakingMedications: z.boolean().optional(),
   hasImmediateHealthConcerns: z.boolean().optional(),
   // Declaration
-  guardianSignature: z.string().min(1, "Signatory signature is required"),
+  guardianName: z.string().optional(),
+  guardianSignature: z.string().optional(),
+  emergencyContactName: z.string().optional(),
+  emergencyContactPhone: z.string().optional(),
+  emergencyContactRelation: z.string().optional(),
   doctorClearance: z.boolean()
 });
 

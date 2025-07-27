@@ -1120,7 +1120,7 @@ export default function RegistrationForm() {
               <div className="bg-white rounded-lg p-4 mb-4">
                 <p className="text-sm text-gray-700 mb-4">
                   I declare that I have read, understood, and answered honestly all the questions above. 
-                  I have fully disclosed all medical conditions & information as a player at the camp. 
+                  I have fully disclosed all medical conditions & information as a player at the Event. 
                   I am agreeing to participate in the exercise sessions (which may include aerobic, resistance, 
                   power and stretching exercises) and understand that there may be risks associated with physical activity. 
                   I also understand that ADSS & Atomics Academy will not be liable to any untoward incident that may arise due to exercise.
@@ -1128,22 +1128,7 @@ export default function RegistrationForm() {
               </div>
               
               <div className="space-y-4">
-                <FormField
-                  control={form.control}
-                  name="guardianName"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Name and Signature of Guardian *</FormLabel>
-                      <FormControl>
-                        <Input 
-                          placeholder="Enter guardian's full name" 
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
+
 
                 <FormField
                   control={form.control}

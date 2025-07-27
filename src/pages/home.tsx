@@ -1,4 +1,4 @@
-import { CalendarDays, Users, Clock, Trophy, Shirt, MapPin, Star } from "lucide-react";
+import { CalendarDays, Users, Clock, Trophy, Shirt, Star } from "lucide-react";
 import RegistrationForm from "@/components/registration-form";
 
 export default function Home() {
@@ -30,10 +30,6 @@ export default function Home() {
                 <h1 className="text-2xl font-bold text-teal-900 tracking-tight drop-shadow-sm">DOF Sports & Family Day</h1>
                 <p className="text-sm text-teal-700 font-medium drop-shadow-sm">August 17th, 2024</p>
               </div>
-            </div>
-            <div className="hidden sm:flex items-center space-x-4">
-              <span className="text-sm text-teal-700 font-medium">Registration Deadline:</span>
-              <span className="px-3 py-1 rounded-full bg-orange-100 text-orange-700 text-xs font-semibold shadow-sm border border-orange-200">Tomorrow EOD</span>
             </div>
           </div>
         </div>

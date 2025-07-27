@@ -3,7 +3,9 @@ import { z } from "zod";
 export const insertRegistrationSchema = z.object({
   fullName: z.string().min(1, "Full name is required"),
   email: z.string().email("Valid email is required"),
-  phone: z.string().min(1, "Phone number is required"),
+  phone: z.string()
+    .min(1, "Phone number is required")
+    .regex(/^((\+971)|0)?5[024568]\d{7}$/, "Must be a valid UAE mobile number"),
   department: z.string().min(1, "Department is required"),
   gender: z.enum(["male", "female"]),
   parentTshirtSize: z.enum(["XS", "S", "M", "L", "XL", "XXL"]),

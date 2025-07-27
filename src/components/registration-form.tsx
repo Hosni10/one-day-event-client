@@ -108,16 +108,17 @@ export default function RegistrationForm() {
       hasChestPain: undefined,
       hasBalanceIssues: undefined,
       // Medical Details
-      hasOtherHealthInfo: undefined,
-      isTakingMedications: undefined,
-      hasImmediateHealthConcerns: undefined,
+
       // Declaration
-      guardianName: "",
       guardianSignature: "",
-      emergencyContactName: "",
-      emergencyContactPhone: "",
-      emergencyContactRelation: "",
+
       doctorClearance: false,
+      spouse: {
+        name: "",
+        age: undefined,
+        gender: undefined,
+        tshirtSize: undefined,
+      },
     },
   });
 
@@ -125,7 +126,7 @@ export default function RegistrationForm() {
   const numberOfKids = form.watch("numberOfKids");
   const interestedInCompeting = form.watch("interestedInCompeting");
   const selectedCompetitiveSports = form.watch("competitiveSports") || [];
-
+  const bringingSpouse = form.watch("bringingSpouse");
 
 
   const registrationMutation = useMutation({
@@ -644,6 +645,124 @@ export default function RegistrationForm() {
                   ))}
                 </div>
               )}
+            </div>
+          )}
+
+          {/* Spouse toggle */}
+          <FormField
+            control={form.control}
+            name="bringingSpouse"
+            render={({ field }) => (
+              <FormItem className="mt-8">
+                <FormLabel>Are you bringing your spouse?</FormLabel>
+                <FormControl>
+                  <RadioGroup
+                    onValueChange={(value) => field.onChange(value === "true")}
+                    value={field.value ? "true" : "false"}
+                    className="flex items-center space-x-6"
+                  >
+                    <div className="flex items-center space-x-2">
+                      <RadioGroupItem value="true" id="spouse-yes" />
+                      <label htmlFor="spouse-yes">Yes</label>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <RadioGroupItem value="false" id="spouse-no" />
+                      <label htmlFor="spouse-no">No</label>
+                    </div>
+                  </RadioGroup>
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+          {bringingSpouse && (
+            <div className="bg-blue-50 rounded-lg p-6 mt-6">
+              <h3 className="font-semibold text-lg mb-4">Spouse Information (if applicable)</h3>
+              <div className="grid md:grid-cols-4 gap-4">
+                <FormField
+                  control={form.control}
+                  name="spouse.name"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Name</FormLabel>
+                      <FormControl>
+                        <Input type="text" placeholder="Name" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="spouse.age"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Age</FormLabel>
+                      <FormControl>
+                        <Input
+                          type="number"
+                          min={18}
+                          max={100}
+                          placeholder="Age"
+                          onChange={e => {
+                            const value = e.target.value;
+                            field.onChange(value === "" ? undefined : parseInt(value));
+                          }}
+                          value={field.value || ""}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="spouse.gender"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Gender</FormLabel>
+                      <Select onValueChange={field.onChange} value={field.value}>
+                        <FormControl>
+                          <SelectTrigger className="w-full">
+                            <SelectValue placeholder="Select gender" />
+                          </SelectTrigger>
+                        </FormControl>
+                        <SelectContent>
+                          <SelectItem value="male">Male</SelectItem>
+                          <SelectItem value="female">Female</SelectItem>
+                        </SelectContent>
+                      </Select>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="spouse.tshirtSize"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>T-shirt Size</FormLabel>
+                      <Select onValueChange={field.onChange} value={field.value}>
+                        <FormControl>
+                          <SelectTrigger className="w-full">
+                            <SelectValue placeholder="Select size" />
+                          </SelectTrigger>
+                        </FormControl>
+                        <SelectContent>
+                          <SelectItem value="XS">XS</SelectItem>
+                          <SelectItem value="S">S</SelectItem>
+                          <SelectItem value="M">M</SelectItem>
+                          <SelectItem value="L">L</SelectItem>
+                          <SelectItem value="XL">XL</SelectItem>
+                          <SelectItem value="XXL">XXL</SelectItem>
+                        </SelectContent>
+                      </Select>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </div>
             </div>
           )}
         </div>

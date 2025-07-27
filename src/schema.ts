@@ -17,6 +17,12 @@ export const insertRegistrationSchema = z.object({
     gender: z.enum(["male", "female"]),
     tshirtSize: z.enum(["XS", "S", "M", "L", "XL", "XXL"])
   })).optional(),
+  spouse: z.object({
+    name: z.string().min(1, "Name is required"),
+    age: z.number().min(0, "Age is required"),
+    gender: z.enum(["male", "female"]),
+    tshirtSize: z.enum(["XS", "S", "M", "L", "XL", "XXL"])
+  }).optional(),
   entertainmentSports: z.array(z.string()).min(1, "Please select at least one sport preference."),
   interestedInCompeting: z.boolean(),
   competitiveSports: z.array(z.string()).optional(),
@@ -26,21 +32,17 @@ export const insertRegistrationSchema = z.object({
   previousInjuries: z.string().optional(),
   physicalLimitations: z.string().optional(),
   healthConcerns: z.string().optional(),
+  bringingSpouse: z.boolean().optional(),
   // Physical Activity Readiness Questionnaire
   hasMedicalConditions: z.boolean().optional(),
   hasHeartCondition: z.boolean().optional(),
   hasChestPain: z.boolean().optional(),
   hasBalanceIssues: z.boolean().optional(),
   // Medical Details
-  hasOtherHealthInfo: z.boolean().optional(),
-  isTakingMedications: z.boolean().optional(),
-  hasImmediateHealthConcerns: z.boolean().optional(),
+ 
   // Declaration
-  guardianName: z.string().optional(),
   guardianSignature: z.string().min(1, "Guardian signature is required"),
-  emergencyContactName: z.string().optional(),
-  emergencyContactPhone: z.string().optional(),
-  emergencyContactRelation: z.string().optional(),
+
   doctorClearance: z.boolean()
 });
 

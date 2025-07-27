@@ -337,7 +337,7 @@ export default function RegistrationForm() {
                           <span>Size Chart</span>
                         </Button>
                       </DialogTrigger>
-                      <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+                      <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto bg-white rounded-xl shadow-2xl border p-8">
                         <DialogHeader>
                           <DialogTitle className="text-2xl font-bold text-gray-900">Size Guide</DialogTitle>
                         </DialogHeader>
@@ -580,7 +580,7 @@ export default function RegistrationForm() {
                                       <span className="text-xs">Size</span>
                                     </Button>
                                   </DialogTrigger>
-                                  <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+                                  <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto bg-white rounded-xl shadow-2xl border p-8">
                                     <DialogHeader>
                                       <DialogTitle className="text-2xl font-bold text-gray-900">Size Guide</DialogTitle>
                                     </DialogHeader>
@@ -1061,7 +1061,7 @@ export default function RegistrationForm() {
             </div>
 
             {/* Medical Details */}
-            <div className="bg-blue-50 rounded-lg p-6 border border-blue-200">
+            {/* <div className="bg-blue-50 rounded-lg p-6 border border-blue-200">
               <h4 className="text-lg font-semibold text-gray-900 mb-4">Medical Details</h4>
               <div className="space-y-4">
                 <FormField
@@ -1145,7 +1145,7 @@ export default function RegistrationForm() {
                   )}
                 />
               </div>
-            </div>
+            </div> */}
 
             {/* Declaration and Data Subject Consent */}
             <div className="bg-green-50 rounded-lg p-6 border border-green-200">

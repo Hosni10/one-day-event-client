@@ -67,7 +67,9 @@ export default function Home() {
             </h1>
             <div className="flex items-center justify-center space-x-2 mb-8">
               <CalendarDays className="text-white text-xl drop-shadow-md" />
-              <span className="text-xl lg:text-2xl text-white font-medium drop-shadow-md">17TH AUG - 8AM TO 6PM</span>
+              <span className="text-xl lg:text-2xl text-white font-medium drop-shadow-md">
+  17<sup className="text-sm lg:text-base">th</sup> AUG - 8AM TO 6PM
+</span>
             </div>
             <p className="text-xl lg:text-2xl text-white mb-8 max-w-3xl mx-auto leading-relaxed drop-shadow-md">
               Get Active & Competitive! Join us for entertainment sports, competitive tournaments, and family-friendly activities.
@@ -224,14 +226,14 @@ export default function Home() {
                 <p><Clock className="inline mr-2" />8AM to 6PM</p>
               </div>
             </div>
-            <div>
+            {/* <div>
               <h4 className="text-lg font-semibold text-white mb-4">Need Help?</h4>
               <div className="space-y-2 text-sm">
                 <p>📧 events@dof.gov.ae</p>
                 <p>📞 +971 2 123 4567</p>
                 <p>🏢 Department of Finance</p>
               </div>
-            </div>
+            </div> */}
             <div>
               <h4 className="text-lg font-semibold text-white mb-4">Important</h4>
               <div className="space-y-2 text-sm">

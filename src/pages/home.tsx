@@ -1,10 +1,18 @@
 import { CalendarDays, Users, Clock, Trophy, Shirt, Star } from "lucide-react";
 import RegistrationForm from "@/components/registration-form";
+import { useToast } from "@/hooks/use-toast";
 
 export default function Home() {
+  const { toast } = useToast();
+  
   const scrollToRegistration = () => {
     document.getElementById('registration')?.scrollIntoView({ 
       behavior: 'smooth' 
+    });
+    toast({
+      title: "Registration Form",
+      description: "Please fill out all required fields to register for the sports day event.",
+      variant: "default",
     });
   };
 
@@ -28,7 +36,7 @@ export default function Home() {
               </div>
               <div>
                 <h1 className="text-2xl font-bold text-teal-900 tracking-tight drop-shadow-sm">DOF Sports & Family Day</h1>
-                <p className="text-sm text-teal-700 font-medium drop-shadow-sm">August 17th, 2024</p>
+                <p className="text-sm text-teal-700 font-medium drop-shadow-sm">August 17th, 2025</p>
               </div>
             </div>
           </div>

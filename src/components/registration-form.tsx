@@ -5,6 +5,7 @@ import { useMutation } from "@tanstack/react-query";
 import { insertRegistrationSchema, type InsertRegistration } from "../schema";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
+import { getErrorMessage, getErrorTitle } from "@/lib/utils";
 import { 
   Form, 
   FormControl, 
@@ -125,26 +126,49 @@ export default function RegistrationForm() {
   const interestedInCompeting = form.watch("interestedInCompeting");
   const selectedCompetitiveSports = form.watch("competitiveSports") || [];
 
+
+
   const registrationMutation = useMutation({
     mutationFn: async (data: InsertRegistration) => {
       const response = await apiRequest("POST", "/api/registrations", data);
       return response.json();
     },
     onSuccess: () => {
+      toast({
+        title: "Registration Successful! 🎉",
+        description: "Your registration has been submitted successfully. A confirmation email has been sent to your email address with all the event details.",
+        variant: "default",
+      });
       setShowSuccess(true);
       form.reset();
     },
     onError: (error: any) => {
       toast({
-        title: "Registration Failed",
-        description: error.message || "Something went wrong. Please try again.",
+        title: getErrorTitle(error),
+        description: getErrorMessage(error),
         variant: "destructive",
       });
     },
   });
 
   const onSubmit = (data: InsertRegistration) => {
+    toast({
+      title: "Submitting Registration",
+      description: "Please wait while we process your registration and send confirmation email...",
+      variant: "default",
+    });
     registrationMutation.mutate(data);
+  };
+
+  const onFormError = (errors: any) => {
+    const errorMessages = Object.values(errors).map((error: any) => error?.message).filter(Boolean);
+    if (errorMessages.length > 0) {
+      toast({
+        title: "Please Fix Form Errors",
+        description: `Please complete the following required fields: ${errorMessages.slice(0, 3).join(', ')}${errorMessages.length > 3 ? ' and more...' : ''}`,
+        variant: "destructive",
+      });
+    }
   };
 
   // Update kids array when numberOfKids changes
@@ -164,10 +188,17 @@ export default function RegistrationForm() {
         </div>
         <h3 className="text-2xl font-bold text-gray-900 mb-4">Registration Successful!</h3>
         <p className="text-gray-600 mb-6">
-          Thank you for registering for Company Sports Day. You'll receive a confirmation email shortly with event details.
+          Thank you for registering for Company Sports Day! A confirmation email has been sent to your email address with all the event details and your registration information.
         </p>
         <Button 
-          onClick={() => setShowSuccess(false)}
+          onClick={() => {
+            setShowSuccess(false);
+            toast({
+              title: "Ready for Another Registration",
+              description: "You can now register another person for the sports day event.",
+              variant: "default",
+            });
+          }}
           className="bg-primary hover:bg-secondary"
         >
           Register Another Person
@@ -178,7 +209,7 @@ export default function RegistrationForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+      <form onSubmit={form.handleSubmit(onSubmit, onFormError)} className="space-y-8">
         {/* Personal Information */}
         <div>
           <h3 className="text-xl font-semibold text-gray-900 mb-6 flex items-center">
@@ -1166,7 +1197,7 @@ export default function RegistrationForm() {
               {registrationMutation.isPending ? (
                 <>
                   <Loader2 className="mr-3 h-5 w-5 animate-spin" />
-                  Processing Registration...
+                  Processing Registration & Sending Email...
                 </>
               ) : (
                 <>

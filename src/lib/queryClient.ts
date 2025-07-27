@@ -1,6 +1,5 @@
 import { QueryClient, QueryFunction } from "@tanstack/react-query";
-import dotenv from "dotenv";
-dotenv.config();
+
 
 async function throwIfResNotOk(res: Response) {
   if (!res.ok) {
@@ -24,8 +23,8 @@ async function throwIfResNotOk(res: Response) {
 
 // Get the base URL for API requests
 const getBaseUrl = () => {
-  // Always use the live backend server URL
-  return process.env.BACKEND_URL || "http://localhost:3000";
+  // Use Vite env variable if set, otherwise fallback to live server
+  return import.meta.env.VITE_API_BASE_URL || "http://localhost:3000";
 };
 
 export async function apiRequest(

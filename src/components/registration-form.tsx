@@ -508,9 +508,11 @@ export default function RegistrationForm() {
                               <FormControl>
                                 <Input 
                                   type="number" 
+                                  required
                                   min={1} 
                                   max={18} 
                                   placeholder="Age"
+                                  
                                   onChange={(e) => {
                                     const value = e.target.value;
                                     field.onChange(value === "" ? undefined : parseInt(value));

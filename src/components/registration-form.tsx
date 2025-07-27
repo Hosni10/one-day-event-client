@@ -253,7 +253,7 @@ export default function RegistrationForm() {
                 <FormItem>
                   <FormLabel>Phone Number *</FormLabel>
                   <FormControl>
-                    <Input placeholder="+1 (555) 123-4567" {...field} />
+                    <Input placeholder="+971 5XXXXXXXX" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -658,7 +658,7 @@ export default function RegistrationForm() {
             name="entertainmentSports"
             render={() => (
               <FormItem>
-                <FormLabel>Preferred Entertainment Sports (Select all that interest you)</FormLabel>
+                <FormLabel>Preferred Entertainment Sports (Select all that interest you) *</FormLabel>
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
                   {entertainmentSports.map((sport) => (
                     <FormField
@@ -953,7 +953,7 @@ export default function RegistrationForm() {
                   name="hasMedicalConditions"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-base">1. Do you suffer from any medical conditions the Camp Operator & ADSS should be aware of? *</FormLabel>
+                      <FormLabel className="text-base">1. Do you suffer from any medical conditions the Event Operator & ADSS should be aware of? *</FormLabel>
                       <FormControl>
                         <RadioGroup 
                           onValueChange={(value) => field.onChange(value === "true")}

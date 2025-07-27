@@ -1,4 +1,6 @@
 import { QueryClient, QueryFunction } from "@tanstack/react-query";
+import dotenv from "dotenv";
+dotenv.config();
 
 async function throwIfResNotOk(res: Response) {
   if (!res.ok) {
@@ -22,9 +24,8 @@ async function throwIfResNotOk(res: Response) {
 
 // Get the base URL for API requests
 const getBaseUrl = () => {
-  // In development, use the proxy (relative URL)
-  // In production, use the same origin
-  return process.env.NODE_ENV === 'production' ? '' : '';
+  // Always use the live backend server URL
+  return process.env.BACKEND_URL || "http://localhost:3000";
 };
 
 export async function apiRequest(
